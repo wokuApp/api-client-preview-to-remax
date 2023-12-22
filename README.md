@@ -1,2 +1,145 @@
-# api-client-preview-to-remax
-This is a pre-documentation of the woku client api for the RE/MAX client
+# Woku API Documentation | Endpoint to Create a Woku (Version v0.0)
+
+This service is part of Woku SpA: Woku is a tool for capturing 1 to 5 star ratings and customer opinions in text or audio format on products or services of a company.
+
+### Important Considerations
+
+This documentation is a practical example for RE/MAX of what the Woku client API would be like, since the domain api-client.woku.app is not active, as the project is under development.
+
+## Introduction
+
+### General Description
+This is a REST API service that enables company owners within the Woku service to create wokus and other functions. For this purpose, only the endpoint for creating a woku is described.
+
+#### Base URL
+`https://api-client.woku.app`
+
+## Authentication
+
+### Type of Authentication
+Company application key.
+
+### Obtaining and Using Keys
+A company application key is provided to the company owner in Woku. This key must be included in the headers of API requests.
+The secondaryKey is created and obtained in the folders of a company in Woku through the Woku client interface.
+The Woku client interface can be accessed at `https://fresh.woku.app`
+
+## Endpoint to Create Wokus
+
+### URL
+`/create-woku`
+
+### Method
+POST
+
+### Headers
+- `Content-Type: application/json`
+- `Authorization: Bearer <company_application_key>`
+
+### Body Request
+```json
+{
+  "description": "Description of the woku",
+  "file": "URL of an image or audio file",
+  "secondaryKey": "Secondary folder key"
+}
+```
+
+### Expected Responses
+- `200 OK: Woku created successfully.`
+- `401 Unauthorized: Invalid or missing application key.`
+- `400 Bad Request: Invalid message body data.`
+
+### DTO of the Body
+
+#### CreateWokuDTO
+- **description*** (string)
+  - Example: Description of the woku
+  - The description cannot have fewer than 3 characters and cannot exceed a maximum of 140 characters.
+- **file*** (string)
+  - This field must be a publicly accessible URL to an image or video file.
+- **secondaryKey** (string)
+  - This is an optional field. This key must be provided by the company owner to a company folder manually in the Woku client interface.
+ 
+## Usage Examples
+
+### JavaScript (using Fetch API)
+```javascript
+fetch('https://api-client.woku.app/create-woku', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer <your_application_key>'
+    },
+    body: JSON.stringify({
+      description: "Description of the woku",
+      file: "File URL",
+      secondaryKey: "Secondary key"
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+```
+
+### Python (using requests)
+```python
+import requests
+
+url = 'https://api-client.woku.app/create-woku'
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer <your_application_key>'
+}
+data = {
+  'description': 'Description of the woku',
+  'file': 'File URL',
+  'secondaryKey': 'Secondary key'
+}
+
+response = requests.post(url, json=data, headers=headers)
+print(response.json())
+```
+
+### PHP (using cURL)
+```php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api-client.woku.app/create-woku');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  'Content-Type: application/json',
+  'Authorization: Bearer <your_application_key>'
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
+  'description' => 'Description of the woku',
+  'file' => 'File URL',
+  'secondaryKey' => 'Secondary key'
+)));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+echo $response;
+```
+
+## Contact and Support
+
+### Contact
+Diego Orrego Brito, CTO of Woku
+Email: diego@woku.app (Please include the company name in the subject and mention the API).
+
+## Common Errors and Solutions
+### Inaccessible File URL
+Ensure that the URL of the provided file is publicly accessible. Our service needs to be able to access the file to create the woku.
+
+### Secondary Key
+The secondary key can only be used if the company owner previously created it in a company folder through the Woku client interface.
+
+
+
+
+
+
+
+
+
+
