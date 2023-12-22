@@ -62,7 +62,7 @@ POST
   - This field must be a publicly accessible URL to an image or video file.
 - **secondaryKey** (string)
   - This is an optional field. This key must be provided by the company owner to a company folder manually in the woku client interface.
-- **clientEmail** (string)
+- **clientEmail*** (string)
   - This field must contain a valid email.
 - **clientPhone** (number)
   - This is an optional field. This field should only have consecutive numbers.
