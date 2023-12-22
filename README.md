@@ -132,7 +132,7 @@ Email: diego@woku.app (Please include the company name in the subject and mentio
 Ensure that the URL of the provided file is publicly accessible. Our service needs to be able to access the file to create the woku.
 
 ### Secondary Key
-The secondary key can only be used if the company owner previously created it in a company folder through the Woku client interface.
+The secondary key can only be used if the company owner previously created it in a company folder through the woku client interface.
 
 
 
