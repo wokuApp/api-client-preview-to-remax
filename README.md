@@ -1,6 +1,6 @@
-# Woku API Documentation | Endpoint to Create a Woku (Version v0.0)
+# woku API Documentation | Endpoint to Create a woku (Version v0.0)
 
-This service is part of Woku SpA: Woku is a tool for capturing 1 to 5 star ratings and customer opinions in text or audio format on products or services of a company.
+This service is part of woku SpA: woku is a tool for capturing 1 to 5 star ratings and customer opinions in text or audio format on products or services of a company.
 
 ### Important Considerations
 
@@ -9,7 +9,7 @@ This documentation is a practical example for RE/MAX of what the Woku client API
 ## Introduction
 
 ### General Description
-This is a REST API service that enables company owners within the Woku service to create wokus and other functions. For this purpose, only the endpoint for creating a woku is described.
+This is a REST API service that enables company owners within the woku service to create wokus and other functions. For this purpose, only the endpoint for creating a woku is described.
 
 #### Base URL
 `https://api-client.woku.app`
@@ -21,10 +21,10 @@ Company application key.
 
 ### Obtaining and Using Keys
 A company application key is provided to the company owner in Woku. This key must be included in the headers of API requests.
-The secondaryKey is created and obtained in the folders of a company in Woku through the Woku client interface.
-The Woku client interface can be accessed at `https://fresh.woku.app`
+The secondaryKey is created and obtained in the folders of a company in woku through the woku client interface.
+The woku client interface can be accessed at `https://fresh.woku.app`
 
-## Endpoint to Create Wokus
+## Endpoint to Create wokus
 
 ### URL
 `/create-woku`
@@ -59,7 +59,7 @@ POST
 - **file*** (string)
   - This field must be a publicly accessible URL to an image or video file.
 - **secondaryKey** (string)
-  - This is an optional field. This key must be provided by the company owner to a company folder manually in the Woku client interface.
+  - This is an optional field. This key must be provided by the company owner to a company folder manually in the woku client interface.
  
 ## Usage Examples
 
@@ -124,7 +124,7 @@ echo $response;
 ## Contact and Support
 
 ### Contact
-Diego Orrego Brito, CTO of Woku
+Diego Orrego Brito, CTO of woku
 Email: diego@woku.app (Please include the company name in the subject and mention the API).
 
 ## Common Errors and Solutions
