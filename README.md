@@ -4,7 +4,7 @@ This service is part of woku SpA: woku is a tool for capturing 1 to 5 star ratin
 
 ### Important Considerations
 
-This documentation is a practical example for RE/MAX of what the Woku client API would be like, since the domain api-client.woku.app is not active, as the project is under development.
+This documentation is a practical example for RE/MAX of what the woku client API would be like, since the domain api-client.woku.app is not active, as the project is under development.
 
 ## Introduction
 
