@@ -39,10 +39,11 @@ POST
 ### Body Request
 ```json
 {
-  "description": "Description of the woku",
+  "description": "Wall painting service",
   "file": "https://wokudevfiles.blob.core.windows.net/wokus/cd7f9cf3-c2e4-4ff0-8a96-19ff813f569e1699220394936-image.webp",
-  "secondaryKey": "Secondary folder key",
-  "clientEmail":"diego@woku.app"
+  "secondaryKey": "6580244e98ebf3609b1b2c2f",
+  "clientEmail": "diego@woku.app",
+  "clientPhone": 56912341234
 }
 ```
 
@@ -63,6 +64,8 @@ POST
   - This is an optional field. This key must be provided by the company owner to a company folder manually in the woku client interface.
 - **clientEmail** (string)
   - This field must contain a valid email.
+- **clientPhone** (number)
+  - This is an optional field. This field should only have consecutive numbers.
  
 ## Usage Examples
 
@@ -78,7 +81,8 @@ fetch('https://api-client.woku.app/create-woku', {
       description: "Description of the woku",
       file: "File URL",
       secondaryKey: "Secondary key",
-      clientEmail: "Email"
+      clientEmail: "Email",
+      clientPhone: 123456789
     })
 })
 .then(response => response.json())
@@ -99,7 +103,8 @@ data = {
   'description': 'Description of the woku',
   'file': 'File URL',
   'secondaryKey': 'Secondary key',
-  'clientEmail': 'Email'
+  'clientEmail': 'Email',
+  'clientPhone': 123456789
 }
 
 response = requests.post(url, json=data, headers=headers)
@@ -119,7 +124,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
   'description' => 'Description of the woku',
   'file' => 'File URL',
   'secondaryKey' => 'Secondary key',
-  'clientEmail' => 'Email'
+  'clientEmail' => 'Email',
+  'clientPhone' => 123456789
 )));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
