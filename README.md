@@ -20,7 +20,7 @@ This is a REST API service that enables company owners within the woku service t
 Company application key.
 
 ### Obtaining and Using Keys
-A company application key is provided to the company owner in Woku. This key must be included in the headers of API requests.
+A company application key is provided to the company owner in woku. This key must be included in the headers of API requests.
 The secondaryKey is created and obtained in the folders of a company in woku through the woku client interface.
 The woku client interface can be accessed at `https://fresh.woku.app`
 
